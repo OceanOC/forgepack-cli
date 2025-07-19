@@ -49,7 +49,9 @@ func main() {
 			OpenZIP(cmd.StringArg("file"), cmd.String("outFolder"), &cffile)
 
 			fmt.Println("All done! \nPress ENTER to exit")
-			fmt.Scanln()
+			if !cmd.Bool("embed") {
+				fmt.Scanln()
+			}
 			return nil
 		},
 	}
